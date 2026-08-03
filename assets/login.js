@@ -130,7 +130,7 @@
      ============================================================ */
   var moreToggle = document.getElementById('more-toggle');
   var morePanel  = document.getElementById('more-panel');
-  moreToggle.addEventListener('click', function () {
+  if (moreToggle && morePanel) moreToggle.addEventListener('click', function () {
     var open = moreToggle.getAttribute('aria-expanded') === 'true';
     moreToggle.setAttribute('aria-expanded', String(!open));
     morePanel.hidden = open;
