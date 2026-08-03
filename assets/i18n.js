@@ -146,6 +146,16 @@
     btn.parentNode.replaceChild(sel, btn);
   });
 
+   /* search snippet must follow the chosen language (2026-07-26) */
+   (function () {
+      function sync() {
+         var l = document.querySelector('.lead'), d = document.querySelector('meta[name="description"]');
+         if (l && d) d.setAttribute('content', l.textContent.replace(/\s+/g, ' ').trim());
+      }
+      new MutationObserver(sync).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+      sync();
+   })();
+   
   var initial = detect();
   nodes('.langsel').forEach(function (s) { s.value = initial; });
   apply(initial);

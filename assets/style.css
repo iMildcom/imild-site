@@ -268,3 +268,8 @@ h1.big em { font-style:normal; color:#4d8dff; }
 .langsel:hover { color:#fff; border-color:rgba(255,255,255,.55); }
 .langsel option { background:#0F172A; color:#e6edf7; }
 [dir="rtl"] .sitenav a.cur { border-block-end:2px solid var(--imild); }
+
+
+/* Product cards use real headings (h2 = brand, h3 = category) so search engines and screen readers see the structure; these rules keep them pixel-identical to the former div/span. */
+.bcard h2.blogo { margin-block:0; margin-inline:0; font-size:23px; font-weight:800; }
+.bcard h3.btag { margin-block:6px 0; margin-inline:0; font-size:10px; font-weight:400; }
